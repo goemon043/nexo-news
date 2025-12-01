@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Julio Mateo Bustillos Serrano">
     <meta name="keywords" content="univalle,noticias, videojuegos">
-    <link rel="icon" type="icon" href="imagenes/Pylon.png"> 
+    <link rel="icon" type="image/png" href="imagenes/Pylon.png"> 
     <link rel="stylesheet" href="css/estilos.css">
     <title>Nexo News</title>
 </head>
@@ -27,16 +27,23 @@
     </header>
 
     <main>
-        <section class="grilla">
-            <article id="noticia-destacada" class="tarjeta">
+        <div class="seccion-superior">
+            <article id="noticia-principal" class="tarjeta_principal">
+            <img id="img-principal" src="" alt="Noticia principal">
+            <h2 id="titulo-principal" class="titulo-tarjeta">Cargando noticia...</h2>
+            <p id="descripcion-principal" class="texto-tarjeta">Cargando descripción...</p>
+            <a id="enlace-principal" href="#" target="_blank">Leer más</a>
             </article>
-            <div id="noticias-secundarias" class="grilla">
+            <div id="noticias-secundarias" class="grilla-secundaria">
             </div>
-        </section>
+        </div>
+        <div id="noticias-inferiores" class="grilla-inferior">
+        </div>
     </main>
 
     <footer>
-        <p>© 2025 Nexo News • Todos los derechos reservados</p>
+        <p>&copy; 2025 Nexo News • Todos los derechos reservados</p>
     </footer>
+    <script src="scripts/scripts.js"></script>
 </body>
 </html>
