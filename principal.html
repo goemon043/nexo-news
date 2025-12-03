@@ -1,49 +1,96 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Julio Mateo Bustillos Serrano">
-    <meta name="keywords" content="univalle,noticias, videojuegos">
-    <link rel="icon" type="image/png" href="imagenes/Pylon.png"> 
-    <link rel="stylesheet" href="css/estilos.css">
-    <title>Nexo News</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="Julio Mateo Bustillos Serrano" />
+  <meta name="keywords" content="univalle, noticias, videojuegos" />
+  <link rel="icon" type="image/png" href="imagenes/Pylon.png" />
+  <link rel="stylesheet" href="css/estilos.css" />
+  <title>Nexo News — Principal</title>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="imagenes/Pylon.png" alt="Logo Nexo News">
-            <h1><span>Nexo News</span></h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="principal.html" class="activo">Principal</a></li>
-                <li><a href="top-juegos.html">Top Juegos</a></li>
-                <li><a href="foro.html">Foro</a></li>
-                <li><a href="noticias.html">Noticias</a></li>
-                <li><a href="contactos.html">Contactos</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <div class="logo">
+      <img src="imagenes/Pylon.png" alt="Logo Nexo News" />
+      <span>Nexo News</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="principal.html" class="activo">Principal</a></li>
+        <li><a href="top-juegos.html">Top Juegos</a></li>
+        <li><a href="foro.html">Foro</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+        <li><a href="contactos.html">Contactos</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <div class="seccion-superior">
-            <article id="noticia-principal" class="tarjeta_principal">
-            <img id="img-principal" src="" alt="Noticia principal">
-            <h2 id="titulo-principal" class="titulo-tarjeta">Cargando noticia...</h2>
-            <p id="descripcion-principal" class="texto-tarjeta">Cargando descripción...</p>
-            <a id="enlace-principal" href="#" target="_blank">Leer más</a>
-            </article>
-            <div id="noticias-secundarias" class="grilla-secundaria">
-            </div>
-        </div>
-        <div id="noticias-inferiores" class="grilla-inferior">
-        </div>
-    </main>
+  <main>
+    <h1>INICIO</h1>
+    <div class="seccion-superior">
+      <article id="noticia-principal" class="tarjeta_principal">
+        <img id="img-principal" src="imagenes/EldenRing.jpg" alt="Portada: Elden Ring DLC" />
+        <h2 id="titulo-principal" class="titulo-tarjeta">Elden Ring: Shadow of the Erdtree ya tiene fecha</h2>
+        <p id="descripcion-principal" class="texto-tarjeta">
+          El tan esperado DLC de FromSoftware llegará el 21 de junio con nuevas zonas, jefes épicos y armas legendarias.
+        </p>
+        <a id="enlace-principal" href="https://ejemplo.com/elden-dlc" target="_blank">Leer más</a>
+      </article>
+      <div id="noticias-secundarias" class="grilla-secundaria">
+        <article class="tarjeta">
+          <img src="imagenes/BaldursGate3.jpg" alt="Baldur's Gate 3 cooperativo" />
+          <h3 class="titulo-tarjeta">Baldur's Gate 3 añade crossplay</h3>
+          <p class="texto-tarjeta">Los jugadores de PC, PlayStation y Xbox ahora pueden jugar juntos en modo multijugador.</p>
+          <a href="https://ejemplo.com/bg3-crossplay" target="_blank">Ver</a>
+        </article>
+        <article class="tarjeta">
+          <img src="imagenes/STEAM.jpg" alt="Steam récord" />
+          <h3 class="titulo-tarjeta">Steam bate récord de usuarios</h3>
+          <p class="texto-tarjeta">Más de 30 millones de jugadores conectados simultáneamente durante el lanzamiento de Starfield.</p>
+          <a href="https://ejemplo.com/steam-record" target="_blank">Ver</a>
+        </article>
+        <article class="tarjeta">
+          <img src="imagenes/Cyberpunk2.jpg" alt="Cyberpunk 2078" />
+          <h3 class="titulo-tarjeta">CD Projekt anuncia Cyberpunk 2078</h3>
+          <p class="texto-tarjeta">La secuela de Cyberpunk 2077 se desarrollará en una ciudad completamente nueva.</p>
+          <a href="https://ejemplo.com/cyberpunk2" target="_blank">Ver</a>
+        </article>
+        <article class="tarjeta">
+          <img src="imagenes/Asus-ROG-Xbox.jpg" alt="Xbox nueva consola" />
+          <h3 class="titulo-tarjeta">Xbox confirma nueva consola para 2026</h3>
+          <p class="texto-tarjeta">Microsoft adelanta planes para la siguiente generación de hardware con foco en IA.</p>
+          <a href="https://ejemplo.com/xbox-next" target="_blank">Ver</a>
+        </article>
+      </div>
+    </div>
 
-    <footer>
-        <p>&copy; 2025 Nexo News • Todos los derechos reservados</p>
-    </footer>
-    <script src="scripts/scripts.js"></script>
+    <div id="noticias-inferiores" class="grilla-inferior">
+      <article class="tarjeta">
+        <img src="imagenes/GTA6.jpg" alt="GTA 6 tráiler" />
+        <h3 class="titulo-tarjeta">GTA 6: Rockstar lanza nuevo tráiler</h3>
+        <p class="texto-tarjeta">Vice City se muestra en todo su esplendor con tecnología gráfica de nueva generación.</p>
+        <a href="https://ejemplo.com/gta6-trailer" target="_blank">Leer</a>
+      </article>
+      <article class="tarjeta">
+        <img src="imagenes/StateofPlay.jpg" alt="PlayStation State of Play" />
+        <h3 class="titulo-tarjeta">PlayStation: State of Play en mayo</h3>
+        <p class="texto-tarjeta">Se esperan novedades de Marvel’s Wolverine, FF7 Rebirth y más exclusivos.</p>
+        <a href="https://ejemplo.com/ps-state" target="_blank">Leer</a>
+      </article>
+      <article class="tarjeta">
+        <img src="imagenes/nintendo.jpg" alt="Nintendo Switch 2" />
+        <h3 class="titulo-tarjeta">Nintendo Switch 2: filtradas especificaciones</h3>
+        <p class="texto-tarjeta">Nueva consola con pantalla OLED mejorada y compatibilidad total con juegos antiguos.</p>
+        <a href="https://ejemplo.com/switch2" target="_blank">Leer</a>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Nexo News • Todos los derechos reservados</p>
+  </footer>
+
+  <script src="scripts/scripts.js"></script>
 </body>
 </html>
