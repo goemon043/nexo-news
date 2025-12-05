@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Julio Mateo Bustillos Serrano">
     <meta name="keywords" content="univalle,noticias, videojuegos">
-    <link rel="icon" type="icon" href="imagenes/Pylon.png"> 
+    <link rel="icon" type="image/png" href="imagenes/Pylon.png"> 
     <link rel="stylesheet" href="css/estilos.css">
     <title>NexoContactos</title>
 </head>
@@ -15,20 +15,21 @@
             <img src="imagenes/Pylon.png" alt="Logo Nexo News">
             <span>Nexo News</span>
         </div>
-        <nav>
+        <button class="menu-hamburguesa" aria-label="Menú de navegación">☰</button>
+        <nav id="menu-principal">
             <ul>
-                <li><a href="principal.html">Principal</a></li>
-                <li><a href="top-juegos.html">Top Juegos</a></li>
-                <li><a href="foro.html">Foro</a></li>
-                <li><a href="noticias.html">Noticias</a></li>
-                <li><a href="contactos.html" class="activo">Contactos</a></li>
+            <li><a href="principal.html">Principal</a></li>
+            <li><a href="top-juegos.html">Top Juegos</a></li>
+            <li><a href="foro.html">Foro</a></li>
+            <li><a href="noticias.html">Noticias</a></li>
+            <li><a href="contactos.html">Contactos</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
+    <main class="pagina-contactos">
         <h1>Contáctanos</h1>
-        <form>
+        <form class="formulario-contacto">
             <div class="campo">
                 <label for="nombre">Nombre</label>
                 <input type="text" id="nombre" placeholder="Tu nombre completo" />
@@ -43,10 +44,25 @@
             </div>
             <button type="submit" class="boton">Enviar mensaje</button>
         </form>
+        <section class="contacto-alternativo">
+        <h2>¡Estamos para ayudarte!</h2>
+        <p>Nos encantaría saber tu opinión, sugerencia o duda. Responderemos lo antes posible.</p>
+            <div class="enlaces-logos">
+                <a href="mailto:bsj2031380@est.univalle.edu" class="logo-link">
+                <img src="imagenes/Outlook.png" alt="Correo Universidad">
+                <span>Universidad</span>
+                </a>
+                <a href="mailto:goemon043@gmail.com" class="logo-link">
+                <img src="imagenes/gmail.png" alt="Correo gmail">
+                <span>Gmail</span>
+                </a>
+            </div>
+        </section>
+        
     </main>
-
-    <footer>
-        <p>© 2025 Nexo News • Todos los derechos reservados</p>
+        <footer>
+        <p>&copy; 2025 Nexo News • Todos los derechos reservados</p>
     </footer>
+    <script src="scripts/scripts.js"></script>
 </body>
 </html>
