@@ -5,12 +5,13 @@
 }
 
 :root {
-  --color-fondo: #3b3b3b;
-  --color-texto: #ffffff;
-  --color-primario: #ffffff;
-  --color-secundario: #666666;
-  --color-borde: #0093bc;
+  --color-fondo: rgb(59, 59, 59);
+  --color-texto: rgb(255, 255, 255);
+  --color-primario: rgb(255, 255, 255);
+  --color-secundario: rgb(102, 102, 102);
+  --color-borde: rgb(0, 147, 188);
   --sombra: 0px 4px 10px rgb(0, 255, 153);
+  --color-contenido: rgb(0, 0, 0); /* ← Nueva variable para negro */
 }
 
 body {
@@ -18,14 +19,12 @@ body {
   line-height: 1.6;
   color: var(--color-texto);
   background-color: var(--color-fondo);
-  padding-bottom: 2rem;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-/* ———————————————————— HEADER ———————————————————— */
-
+/* ————— HEADER ————— */
 header {
   display: flex;
   justify-content: center;
@@ -74,46 +73,38 @@ nav a {
 }
 
 nav a.activo {
-  background: black;
-  color: white;
+  background: var(--color-contenido);
+  color: var(--color-primario);
   border: none;
   font-weight: bold;
 }
 
-/* ———————————————————— MAIN ———————————————————— */
+/* ————— MENÚ HAMBURGUESA ————— */
+.menu-hamburguesa {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-primario);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
 
+/* ————— MAIN ————— */
 main {
   max-width: 80%;
   margin: 2rem auto;
   padding: 0 1rem;
   flex: 1;
 }
-/* Ancho más generoso solo en la página de contactos */
-main.pagina-contactos {
-  max-width: 1200px;
-  padding: 0 2rem;
-}
-
-/* Formulario más ancho y con estilo */
-main.pagina-contactos .formulario-contacto {
-  width:90%;
-  max-width:1000px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: rgba(0,0,0,0.2);
-  border: 1px solid var(--color-borde);
-  box-shadow: var(--sombra);
-  border-radius: 16px;
-}
-
 
 h1, h2, h3 {
   margin: 1.5rem 0 1rem;
   font-weight: bold;
 }
 
-/* ———————————————————— FORMULARIOS ———————————————————— */
-
+/* ————— FORMULARIOS ————— */
 .campo {
   margin-bottom: 1.5rem;
 }
@@ -140,10 +131,9 @@ h1, h2, h3 {
   resize: vertical;
 }
 
-
 .boton {
-  background: black;
-  color: white;
+  background: var(--color-contenido);
+  color: var(--color-primario);
   border: none;
   padding: 0.7rem 1.5rem;
   border-radius: 4px;
@@ -154,13 +144,13 @@ h1, h2, h3 {
 }
 
 .boton:hover {
-  background: #ffffff;
-  color: black;
+  background: var(--color-primario);
+  color: var(--color-contenido);
 }
 
 .boton.jugar {
-  background: white;
-  color: black;
+  background: var(--color-primario);
+  color: var(--color-contenido);
   width: 100%;
   max-width: 80px;
   margin: 0 auto;
@@ -176,33 +166,53 @@ h1, h2, h3 {
   transform: scale(1.1);
 }
 
-/* ———————————————————— TARJETAS ———————————————————— */
-
+/* ————— TARJETAS ————— */
 .tarjeta,
-.tarjeta-juego {
+.tarjeta-juego,
+.grilla-secundaria .tarjeta,
+.grilla-inferior .tarjeta {
   padding: 1rem;
   border: 1px solid var(--color-borde);
-  background-color: black;
+  background-color: var(--color-contenido);
   box-shadow: var(--sombra);
   border-radius: 20px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.tarjeta img,
+.tarjeta-juego img,
+.tarjeta_principal img,
+.grilla-secundaria .tarjeta img,
+.grilla-inferior .tarjeta img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.tarjeta img,
+.tarjeta-juego img {
+  margin-bottom: 0.5rem;
+}
+
+.grilla-secundaria .tarjeta img {
+  height: 120px;
+}
+
+.grilla-inferior .tarjeta img {
+  height: 150px;
 }
 
 .tarjeta-juego img {
-  width: 100%;
   height: 180px;
-  object-fit: cover;
-  margin-bottom: 0.5rem;
-  border-radius: 10px;
 }
-.tarjeta img,
-.tarjeta-juego img,
+
 .tarjeta_principal img {
-  width: 100%;
-  height: auto;
-  max-height: 300px; /* evita imágenes absurdamente altas */
-  object-fit: cover;
-  border-radius: 10px;
+  height: 100%;
+  margin-bottom: 0.8rem;
+  border-radius: 4px;
 }
 
 .info-juego {
@@ -211,11 +221,37 @@ h1, h2, h3 {
   line-height: 1.4;
 }
 
-/* ———————————————————— NOTICIAS PRINCIPALES ———————————————————— */
+.titulo-tarjeta {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  color: var(--color-primario);
+  text-align: left;
+}
 
+.texto-tarjeta {
+  font-size: 0.8rem;
+  color: rgb(187, 187, 187);
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  flex-grow: 1;
+}
+
+.tarjeta a,
+.grilla-secundaria a,
+.grilla-inferior a {
+  display: block;
+  text-align: center;
+  color: var(--color-primario);
+  text-decoration: underline;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+/* ————— NOTICIA PRINCIPAL ————— */
 .tarjeta_principal {
   padding: 1rem;
-  background-color: black;
+  background-color: var(--color-contenido);
   border-radius: 5%;
   box-shadow: var(--sombra);
   display: flex;
@@ -225,34 +261,25 @@ h1, h2, h3 {
   text-align: center;
 }
 
-.tarjeta_principal img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  margin-bottom: 0.8rem;
-  border-radius: 4px;
-}
-
 .tarjeta_principal .titulo-tarjeta {
   font-size: 1.3rem;
   font-weight: bold;
   margin-bottom: 0.6rem;
-  color: white;
+  color: var(--color-primario);
 }
 
 .tarjeta_principal .texto-tarjeta {
   font-size: 0.95rem;
-  color: #cccccc;
+  color: rgb(204, 204, 204);
   line-height: 1.5;
   margin-bottom: 0.8rem;
   text-align: left;
-  flex-grow: 1;
 }
 
 .tarjeta_principal a {
   align-self: flex-start;
-  background: white;
-  color: black;
+  background: var(--color-primario);
+  color: var(--color-contenido);
   padding: 0.5rem 1rem;
   border-radius: 4px;
   font-weight: bold;
@@ -262,11 +289,10 @@ h1, h2, h3 {
 }
 
 .tarjeta_principal a:hover {
-  background: #f0f0f0;
+  background: rgb(240, 240, 240);
 }
 
-/* ———————————————————— GRILLAS ———————————————————— */
-
+/* ————— GRILLAS ————— */
 .grilla {
   display: grid;
   gap: 1.5rem;
@@ -299,73 +325,75 @@ h1, h2, h3 {
   margin-top: 1rem;
 }
 
-/* Estilos compartidos para tarjetas de noticias secundarias/inferiores */
-.grilla-secundaria .tarjeta,
-.grilla-inferior .tarjeta {
-  padding: 0.75rem;
-  background-color: black;
+/* ————— CONTACTO ————— */
+.contacto-alternativo {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: rgba(10, 10, 10, 0.7);
   border: 1px solid var(--color-borde);
-  border-radius: 20px;
+  border-radius: 16px;
   box-shadow: var(--sombra);
-  height: 100%;
+  text-align: center;
+}
+
+.contacto-alternativo h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.enlaces-logos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.logo-link {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-}
-
-.grilla-secundaria .tarjeta img {
-  height: 120px;
-  object-fit: cover;
-  margin-bottom: 0.5rem;
-  border-radius: 10px;
-}
-
-.grilla-inferior .tarjeta img {
-  height: 150px;
-  object-fit: cover;
-  margin-bottom: 0.5rem;
-  border-radius: 10px;
-}
-
-.titulo-tarjeta {
-  font-size: 1rem;
-  margin-bottom: 0.3rem;
-  color: white;
-  text-align: left;
-}
-
-.texto-tarjeta {
-  font-size: 0.8rem;
-  color: #bbbbbb;
-  line-height: 1.3;
-  margin-bottom: 0.5rem;
-  text-align: left;
-  flex-grow: 1;
-}
-
-.grilla-secundaria a,
-.grilla-inferior a {
-  display: block;
-  text-align: center;
+  align-items: center;
+  text-decoration: none;
   color: var(--color-primario);
-  text-decoration: underline;
-  font-size: 0.8rem;
-  margin-top: 0.5rem;
+  transition: transform 0.2s ease;
 }
 
-/* ———————————————————— FOOTER ———————————————————— */
+.logo-link:hover {
+  transform: scale(1.1);
+}
 
+.logo-link img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+  filter: brightness(0.9);
+  transition: filter 0.2s;
+}
+
+.logo-link img:hover {
+  filter: brightness(1.2);
+}
+
+.logo-link span {
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+  letter-spacing: 0.5px;
+}
+
+/* ————— FOOTER ————— */
 footer {
-  background: rgb(0, 0, 0);
+  background: var(--color-contenido);
   border-top: 1px solid var(--color-borde);
   padding: 2rem 1rem;
   text-align: center;
   margin-top: auto;
 }
 
-/* ———————————————————— RESPONSIVE ———————————————————— */
-
-@media (max-width: 767px) {
+/* ————— RESPONSIVE ————— */
+@media (max-width: 850px) {
   .seccion-superior {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -399,6 +427,42 @@ footer {
   main {
     max-width: 100%;
     padding: 0 1rem;
+  }
+
+  .menu-hamburguesa {
+    display: block;
+  }
+
+  nav#menu-principal {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgb(23, 23, 31);
+    border-bottom: 1px solid var(--color-borde);
+    z-index: 101;
+    display: none;
+  }
+
+  nav#menu-principal.abierto {
+    display: block;
+  }
+
+  nav#menu-principal ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  nav#menu-principal a {
+    display: block;
+    padding: 1rem;
+    text-align: center;
+    border: none;
+    border-radius: 0;
+  }
+
+  nav#menu-principal a:hover {
+    background: rgba(0, 147, 188, 0.2);
   }
 }
 
