@@ -1,74 +1,80 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Julio Mateo Bustillos Serrano">
-    <meta name="keywords" content="univalle,noticias, videojuegos">
-    <link rel="icon" type="image/png" href="imagenes/Pylon.png"> 
-    <link rel="stylesheet" href="css/estilos.css">
-    <title>Nexoforo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Julio Mateo Bustillos Serrano">
+  <meta name="keywords" content="univalle,noticias, videojuegos">
+  <link rel="icon" type="image/png" href="imagenes/Pylon.png">
+  <link rel="stylesheet" href="css/estilos.css">
+  <title>NexoForo</title>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="imagenes/Pylon.png" alt="Logo Nexo News">
-            <span>Nexo News</span>
-        </div>
-        <button class="menu-hamburguesa" aria-label="Menú de navegación">☰</button>
-        <nav id="menu-principal">
-            <ul>
-                <li><a href="principal.html">Principal</a></li>
-                <li><a href="top-juegos.html">Top Juegos</a></li>
-                <li><a href="foro.html">Foro</a></li>
-                <li><a href="noticias.html">Noticias</a></li>
-                <li><a href="contactos.html">Contactos</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <div class="logo">
+      <img src="imagenes/Pylon.png" alt="Logo Nexo News">
+      <span>Nexo News</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="principal.html">Principal</a></li>
+        <li><a href="top-juegos.html">Top Juegos</a></li>
+        <li><a href="foro.html" class="activo">Foro</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+        <li><a href="contactos.html">Contactos</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <h1>Foro de la comunidad</h1>
+  <main>
+    <h1>Foro de la comunidad</h1>
+    <form class="formulario-foro">
+      <div class="campo">
+        <label for="categoria">Categoría del tema</label>
+        <select id="categoria" class="select-foro">
+          <option value="general">General</option>
+          <option value="lanzamientos">Lanzamientos</option>
+          <option value="opinion">Opinión</option>
+          <option value="soporte">Soporte Técnico</option>
+          <option value="offtopic">Off-Topic</option>
+        </select>
+      </div>
 
-        <form>
-            <div class="campo">
-                <label for="categoria">Categoría del tema</label>
-                <div class="descripcion">Selecciona el tipo de conversación que deseas iniciar.</div>
-                <select id="categoria">
-                    <option value="general">General</option>
-                    <option value="lanzamientos">Lanzamientos</option>
-                    <option value="opinion">Opinión</option>
-                    <option value="soporte">Soporte Técnico</option>
-                    <option value="offtopic">Off-Topic</option>
-                </select>
-            </div>
+      <div class="campo">
+        <label for="comentario">Tu comentario o mensaje</label>
+        <textarea id="comentario" placeholder="Escribe aquí tu mensaje..."></textarea>
+      </div>
 
-            <div class="campo">
-                <label for="comentario">Tu comentario o mensaje</label>
-                <div class="descripcion">Escribe tu idea, pregunta o debate para la comunidad.</div>
-                <textarea id="comentario" placeholder="Escribe aquí tu mensaje..."></textarea>
-            </div>
+      <button type="submit" class="boton">Publicar en el foro</button>
+    </form>
+    <div class="filtro-foro">
+      <label for="filtro-categoria">Filtrar por categoría:</label>
+      <select id="filtro-categoria" class="select-foro">
+        <option value="general">General (mostrar todo)</option>
+        <option value="lanzamientos">Lanzamientos</option>
+        <option value="opinion">Opinión</option>
+        <option value="soporte">Soporte Técnico</option>
+        <option value="offtopic">Off-Topic</option>
+      </select>
+    </div>
 
-            <button type="submit" class="boton">Publicar en el foro</button>
-        </form>
+    <h2>Últimos comentarios</h2>
+    <section class="grilla">
+      <article class="tarjeta" data-categoria="soporte">
+        <p><strong>Soporte Técnico • 01/12/2025</strong><br>¿Alguien ya jugó la demo de GTA 6? El motor gráfico es impresionante.</p>
+      </article>
+      <article class="tarjeta" data-categoria="opinion">
+        <p><strong>Opinión • 30/11/2025</strong><br>Los juegos de mundo abierto se están volviendo repetitivos. ¡Necesitamos innovación!</p>
+      </article>
+      <article class="tarjeta" data-categoria="Off-Topic">
+        <p><strong>Off-Topic • 29/11/2025</strong><br>¡Hola comunidad! ¿Qué juego están jugando esta semana?</p>
+      </article>
+    </section>
+  </main>
 
-        <h2>Últimos comentarios</h2>
-        <section class="grilla">
-            <article class="tarjeta">
-                <p><strong>Lanzamientos • 01/12/2025</strong><br>¿Alguien ya jugó la demo de GTA 6? El motor gráfico es impresionante.</p>
-            </article>
-            <article class="tarjeta">
-                <p><strong>Opinión • 30/11/2025</strong><br>Los juegos de mundo abierto se están volviendo repetitivos. ¡Necesitamos innovación!</p>
-            </article>
-            <article class="tarjeta">
-                <p><strong>General • 29/11/2025</strong><br>¡Hola comunidad! ¿Qué juego están jugando esta semana?</p>
-            </article>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Nexo News • Todos los derechos reservados</p>
-    </footer>
-    <script src="scripts/scripts.js"></script>
+  <footer>
+    <p>&copy; 2025 Nexo News • Todos los derechos reservados</p>
+  </footer>
+  <script src="scripts/scripts.js"></script>
 </body>
 </html>
