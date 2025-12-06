@@ -129,6 +129,41 @@ h1, h2, h3 {
 .campo textarea {
   min-height: 150px;
   resize: vertical;
+  background-color: var(--color-contenido);
+  color: var(--color-texto);
+}
+/* === ESTILOS PARA SELECTORES DEL FORO === */
+.select-foro {
+  width: 100%;
+  padding: 0.7rem;
+  border: 1px solid var(--color-borde);
+  border-radius: 4px;
+  background: var(--color-contenido);
+  color: var(--color-primario);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.select-foro:focus {
+  outline: none;
+  border-color: rgb(0, 255, 153);
+}
+
+/* Filtro de visualización */
+.filtro-foro {
+  margin: 1.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+.filtro-foro label {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.95rem;
+  color: var(--color-primario);
 }
 
 .boton {
@@ -167,6 +202,17 @@ h1, h2, h3 {
 }
 
 /* ————— TARJETAS ————— */
+.tarjeta,
+.tarjeta-juego,
+.tarjeta_principal {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta:hover,
+.tarjeta-juego:hover,
+.tarjeta_principal:hover {
+  transform: scale(1.03);
+}
 .tarjeta,
 .tarjeta-juego,
 .grilla-secundaria .tarjeta,
@@ -289,7 +335,7 @@ h1, h2, h3 {
 }
 
 .tarjeta_principal a:hover {
-  background: rgb(240, 240, 240);
+  background: rgb(73, 255, 73);
 }
 
 /* ————— GRILLAS ————— */
@@ -381,6 +427,16 @@ h1, h2, h3 {
   font-size: 0.9rem;
   margin-top: 0.3rem;
   letter-spacing: 0.5px;
+}
+.formulario-contacto .campo input,
+.formulario-contacto .campo textarea {
+  background: var(--color-contenido); /* fondo negro */
+  color: var(--color-primario);       /* texto blanco */
+  border: 1px solid var(--color-borde); /* borde cian */
+  border-radius: 4px;
+  padding: 0.8rem;
+  font-size: 1rem;
+  width: 100%;
 }
 
 /* ————— FOOTER ————— */
