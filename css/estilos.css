@@ -11,7 +11,7 @@
   --color-secundario: rgb(102, 102, 102);
   --color-borde: rgb(0, 147, 188);
   --sombra: 0px 4px 10px rgb(0, 255, 153);
-  --color-contenido: rgb(0, 0, 0); /* ← Nueva variable para negro */
+  --color-contenido: rgb(0, 0, 0);
 }
 
 body {
@@ -117,22 +117,9 @@ h1, h2, h3 {
   letter-spacing: 0.5px;
 }
 
+/* Unificar estilos de inputs, textarea, selects */
 .campo input,
-.campo textarea {
-  width: 100%;
-  padding: 0.7rem;
-  border: 1px solid var(--color-borde);
-  border-radius: 4px;
-  font-size: 1rem;
-}
-
-.campo textarea {
-  min-height: 150px;
-  resize: vertical;
-  background-color: var(--color-contenido);
-  color: var(--color-texto);
-}
-/* === ESTILOS PARA SELECTORES DEL FORO === */
+.campo textarea,
 .select-foro {
   width: 100%;
   padding: 0.7rem;
@@ -141,29 +128,22 @@ h1, h2, h3 {
   background: var(--color-contenido);
   color: var(--color-primario);
   font-size: 1rem;
+}
+
+.campo textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.select-foro {
   cursor: pointer;
 }
 
-.select-foro:focus {
+.select-foro:focus,
+.campo input:focus,
+.campo textarea:focus {
   outline: none;
   border-color: rgb(0, 255, 153);
-}
-
-/* Filtro de visualización */
-.filtro-foro {
-  margin: 1.5rem 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  align-items: center;
-}
-
-.filtro-foro label {
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-size: 0.95rem;
-  color: var(--color-primario);
 }
 
 .boton {
@@ -184,15 +164,10 @@ h1, h2, h3 {
 }
 
 .boton.jugar {
-  background: var(--color-primario);
-  color: var(--color-contenido);
   width: 100%;
   max-width: 80px;
   margin: 0 auto;
   padding: 0.5rem 1rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  border-radius: 4px;
   transition: transform 0.3s ease, background 0.3s ease;
 }
 
@@ -202,21 +177,10 @@ h1, h2, h3 {
 }
 
 /* ————— TARJETAS ————— */
+/* Unificar todos los estilos de tarjetas */
 .tarjeta,
 .tarjeta-juego,
 .tarjeta_principal {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.tarjeta:hover,
-.tarjeta-juego:hover,
-.tarjeta_principal:hover {
-  transform: scale(1.03);
-}
-.tarjeta,
-.tarjeta-juego,
-.grilla-secundaria .tarjeta,
-.grilla-inferior .tarjeta {
   padding: 1rem;
   border: 1px solid var(--color-borde);
   background-color: var(--color-contenido);
@@ -225,8 +189,16 @@ h1, h2, h3 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.tarjeta:hover,
+.tarjeta-juego:hover,
+.tarjeta_principal:hover {
+  transform: scale(1.03);
+}
+
+/* Imágenes en tarjetas */
 .tarjeta img,
 .tarjeta-juego img,
 .tarjeta_principal img,
@@ -236,25 +208,13 @@ h1, h2, h3 {
   height: auto;
   object-fit: cover;
   border-radius: 10px;
-}
-
-.tarjeta img,
-.tarjeta-juego img {
   margin-bottom: 0.5rem;
 }
 
-.grilla-secundaria .tarjeta img {
-  height: 120px;
-}
-
-.grilla-inferior .tarjeta img {
-  height: 150px;
-}
-
-.tarjeta-juego img {
-  height: 180px;
-}
-
+/* Alturas específicas */
+.grilla-secundaria .tarjeta img { height: 120px; }
+.grilla-inferior .tarjeta img { height: 150px; }
+.tarjeta-juego img { height: 180px; }
 .tarjeta_principal img {
   height: 100%;
   margin-bottom: 0.8rem;
@@ -296,13 +256,6 @@ h1, h2, h3 {
 
 /* ————— NOTICIA PRINCIPAL ————— */
 .tarjeta_principal {
-  padding: 1rem;
-  background-color: var(--color-contenido);
-  border-radius: 5%;
-  box-shadow: var(--sombra);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   min-height: 300px;
   text-align: center;
 }
@@ -311,14 +264,12 @@ h1, h2, h3 {
   font-size: 1.3rem;
   font-weight: bold;
   margin-bottom: 0.6rem;
-  color: var(--color-primario);
 }
 
 .tarjeta_principal .texto-tarjeta {
   font-size: 0.95rem;
   color: rgb(204, 204, 204);
   line-height: 1.5;
-  margin-bottom: 0.8rem;
   text-align: left;
 }
 
@@ -427,16 +378,6 @@ h1, h2, h3 {
   font-size: 0.9rem;
   margin-top: 0.3rem;
   letter-spacing: 0.5px;
-}
-.formulario-contacto .campo input,
-.formulario-contacto .campo textarea {
-  background: var(--color-contenido); /* fondo negro */
-  color: var(--color-primario);       /* texto blanco */
-  border: 1px solid var(--color-borde); /* borde cian */
-  border-radius: 4px;
-  padding: 0.8rem;
-  font-size: 1rem;
-  width: 100%;
 }
 
 /* ————— FOOTER ————— */
