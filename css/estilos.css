@@ -105,6 +105,15 @@ h1, h2, h3 {
 }
 
 /* ————— FORMULARIOS ————— */
+.formulario-contacto {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  background: var(--color-contenido); /* fondo negro */
+  border: 1px solid var(--color-borde); /* borde cian */
+  border-radius: 16px;
+  box-shadow: var(--sombra); /* sombra verde neón */
+}
 .campo {
   margin-bottom: 1.5rem;
 }
