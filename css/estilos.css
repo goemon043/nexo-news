@@ -192,12 +192,6 @@ h1, h2, h3 {
   background: var(--color-primario);
   color: var(--color-contenido);
 }
-/* ————— Botón de volver en leer-mas.html ————— */
-.boton-volver {
-  margin-top: 1rem;
-  display: inline-block;
-  height: 2rem;
-}
 
 .boton-blanco:hover {
   background: rgb(0, 255, 153);
