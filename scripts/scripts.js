@@ -204,7 +204,7 @@ if (form && grilla) {
   }
 
   form.addEventListener('submit', e => {
-    e.preventDefault(); // ← Esto es clave
+    e.preventDefault();
     const texto = comentarioTextarea.value.trim();
     const categoria = categoriaSelect.value;
     if (!texto) {
@@ -276,8 +276,30 @@ if (form && grilla) {
         document.getElementById('contenido-completo').textContent = 'No se pudo recuperar el contenido. ¿El archivo JSON está en la ruta correcta?';
       });
   }
-  document.querySelector('.formulario-contacto').addEventListener('submit', function(e) {
+  // ═════════ VALIDACIÓN: SOLO TEXTO EN CONTACTOS ═════════
+const formContacto = document.querySelector('.formulario-contacto');
+if (formContacto) {
+  formContacto.addEventListener('submit', function(e) {
     const nombre = document.getElementById('nombre').value.trim();
-    alert("Gracias por su mensaje, " + nombre + "!");
-    });
+    const mensaje = document.getElementById('mensaje').value.trim();
+
+    // Expresión regular: solo letras, espacios, tildes y ñ (opcional)
+    const soloTexto = /^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ\s]+$/;
+
+    if (!soloTexto.test(nombre)) {
+      e.preventDefault();
+      alert('El nombre solo puede contener letras y espacios.');
+      return;
+    }
+
+    if (!soloTexto.test(mensaje)) {
+      e.preventDefault();
+      alert('El mensaje solo puede contener letras y espacios.');
+      return;
+    }
+    alert('Gracias por el comentario'+nombre);
+    this.reset();
+    e.preventDefault();
+  });
+}
 });
