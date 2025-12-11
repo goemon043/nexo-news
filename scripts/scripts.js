@@ -277,7 +277,6 @@ if (form && grilla) {
       });
   }
   document.querySelector('.formulario-contacto').addEventListener('submit', function(e) {
-    e.preventDefault();
     const nombre = document.getElementById('nombre').value.trim();
     alert("Gracias por su mensaje, " + nombre + "!");
     });
