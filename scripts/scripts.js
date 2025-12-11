@@ -31,6 +31,7 @@ if (document.getElementById('img-principal')) {
       document.getElementById('titulo-principal').textContent = p.title || 'Sin título';
       document.getElementById('descripcion-principal').textContent = p.description || 'Descripción no disponible.';
       document.getElementById('enlace-principal').href = 'leer-mas.html?noticia=0';
+      document.getElementById('enlace-principal').target = '_self';
       
       const imgPrincipal = document.getElementById('img-principal');
       imgPrincipal.src = p.urlToImage || FALLO_IMAGEN;
