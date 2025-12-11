@@ -1,3 +1,4 @@
+/* ————— RESET Y VARIABLES ————— */
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +15,7 @@
   --color-contenido: rgb(0, 0, 0);
 }
 
+/* ————— ESTILOS BASE ————— */
 body {
   font-family: system-ui, -apple-system, sans-serif;
   line-height: 1.6;
@@ -46,6 +48,7 @@ header {
   font-weight: bold;
   color: var(--color-primario);
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .logo img {
@@ -69,7 +72,12 @@ nav a {
   padding: 0.5rem 1rem;
   border: 1px solid var(--color-borde);
   border-radius: 4px;
-  transition: all 0.2s;
+  transition: background 0.3s ease;
+}
+
+nav a:hover {
+  background: var(--color-borde);
+  color: var(--color-primario);
 }
 
 nav a.activo {
@@ -114,6 +122,7 @@ h1, h2, h3 {
   border-radius: 16px;
   box-shadow: var(--sombra);
 }
+
 .campo {
   margin-bottom: 1.5rem;
 }
@@ -126,7 +135,7 @@ h1, h2, h3 {
   letter-spacing: 0.5px;
 }
 
-/* Unificar estilos de inputs, textarea, selects */
+/* Inputs y selects */
 .campo input,
 .campo textarea,
 .select-foro {
@@ -148,16 +157,15 @@ h1, h2, h3 {
   cursor: pointer;
 }
 
-.select-foro:focus,
 .campo input:focus,
-.campo textarea:focus {
+.campo textarea:focus,
+.select-foro:focus {
   outline: none;
   border-color: rgb(0, 255, 153);
 }
 
+/* ————— BOTONES ————— */
 .boton {
-  background: var(--color-contenido);
-  color: var(--color-primario);
   border: none;
   padding: 0.7rem 1.5rem;
   border-radius: 4px;
@@ -165,28 +173,31 @@ h1, h2, h3 {
   font-weight: bold;
   text-transform: uppercase;
   transition: background 0.2s;
+  font-size: 1rem;
 }
 
-.boton:hover {
+/* Variante principal (fondo oscuro) */
+.boton-primario {
+  background: var(--color-contenido);
+  color: var(--color-primario);
+}
+
+.boton-primario:hover {
   background: var(--color-primario);
   color: var(--color-contenido);
 }
 
-.boton.jugar {
-  width: 100%;
-  max-width: 80px;
-  margin: 0 auto;
-  padding: 0.5rem 1rem;
-  transition: transform 0.3s ease, background 0.3s ease;
+/* Variante secundaria (fondo blanco/verde) */
+.boton-blanco {
+  background: var(--color-primario);
+  color: var(--color-contenido);
 }
 
-.boton.jugar:hover {
-  background-color: rgb(0, 255, 153);
-  transform: scale(1.1);
+.boton-blanco:hover {
+  background: rgb(0, 255, 153);
 }
 
 /* ————— TARJETAS ————— */
-/* Unificar todos los estilos de tarjetas */
 .tarjeta,
 .tarjeta-juego,
 .tarjeta_principal {
@@ -210,9 +221,7 @@ h1, h2, h3 {
 /* Imágenes en tarjetas */
 .tarjeta img,
 .tarjeta-juego img,
-.tarjeta_principal img,
-.grilla-secundaria .tarjeta img,
-.grilla-inferior .tarjeta img {
+.tarjeta_principal img {
   width: 100%;
   height: auto;
   object-fit: cover;
@@ -252,6 +261,7 @@ h1, h2, h3 {
   flex-grow: 1;
 }
 
+/* Enlaces en tarjetas */
 .tarjeta a,
 .grilla-secundaria a,
 .grilla-inferior a {
@@ -298,6 +308,63 @@ h1, h2, h3 {
   background: rgb(73, 255, 73);
 }
 
+/* ————— PÁGINA LEER MÁS ————— */
+.tarjeta-ampliada {
+  max-width: 720px;
+  margin: 2.5rem auto;
+  padding: 2.5rem;
+  background: var(--color-contenido);
+  border: 1px solid var(--color-borde);
+  border-radius: 12px;
+  box-shadow: var(--sombra);
+  text-align: left;
+  line-height: 1.7;
+}
+
+#titulo-noticia {
+  font-size: 2.2rem;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+  color: var(--color-primario);
+  font-weight: 700;
+}
+
+#img-noticia {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  display: block;
+}
+
+#contenido-completo {
+  font-size: 1.1rem;
+  color: rgb(220, 220, 220);
+  text-align: justify;
+  white-space: pre-line;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+#enlace-original {
+  display: inline-block;
+  background: var(--color-borde);
+  color: var(--color-fondo);
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background 0.2s, transform 0.2s;
+}
+
+#enlace-original:hover {
+  background: rgb(0, 200, 130);
+  transform: translateY(-2px);
+}
+
 /* ————— GRILLAS ————— */
 .grilla {
   display: grid;
@@ -329,6 +396,60 @@ h1, h2, h3 {
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin-top: 1rem;
+}
+
+/* ————— FORO ————— */
+.grilla-foro {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.grilla-foro .tarjeta {
+  padding: 1.5rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  border-radius: 16px;
+}
+
+.grilla-foro .tarjeta p {
+  margin: 0;
+}
+
+.grilla-foro .tarjeta p strong {
+  font-size: 1.1rem;
+  color: var(--color-borde);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+#formulario-foro {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--color-contenido);
+  border: 1px solid var(--color-borde);
+  border-radius: 16px;
+  box-shadow: var(--sombra);
+}
+
+#formulario-foro .campo {
+  margin-bottom: 1.8rem;
+}
+
+#formulario-foro .campo label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+/* ————— CONTENEDOR AGRUPADO DEL FORO (filtro + comentarios) ————— */
+.contenedor-foro {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: rgba(20, 20, 25, 0.6);
+  border: 1px solid var(--color-borde);
+  border-radius: 16px;
+  box-shadow: var(--sombra);
 }
 
 /* ————— CONTACTO ————— */
