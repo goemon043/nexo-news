@@ -276,14 +276,11 @@ if (form && grilla) {
         document.getElementById('contenido-completo').textContent = 'No se pudo recuperar el contenido. ¿El archivo JSON está en la ruta correcta?';
       });
   }
-  // ═════════ VALIDACIÓN: SOLO TEXTO EN CONTACTOS ═════════
 const formContacto = document.querySelector('.formulario-contacto');
 if (formContacto) {
   formContacto.addEventListener('submit', function(e) {
     const nombre = document.getElementById('nombre').value.trim();
     const mensaje = document.getElementById('mensaje').value.trim();
-
-    // Expresión regular: solo letras, espacios, tildes y ñ (opcional)
     const soloTexto = /^[a-zA-ZáéíóúüñÁÉÍÓÚÜÑ\s]+$/;
 
     if (!soloTexto.test(nombre)) {
@@ -297,7 +294,7 @@ if (formContacto) {
       alert('El mensaje solo puede contener letras y espacios.');
       return;
     }
-    alert('Gracias por el comentario'+nombre);
+    alert('Gracias por el comentario '+nombre);
     this.reset();
     e.preventDefault();
   });
