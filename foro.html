@@ -31,7 +31,7 @@
 
   <main>
     <h1>Foro de la comunidad</h1>
-    <form class="formulario-foro">
+    <form id="formulario-foro">
       <div class="campo">
         <label for="categoria">Categoría del tema</label>
         <select id="categoria" class="select-foro">
@@ -48,8 +48,9 @@
         <textarea id="comentario" placeholder="Escribe aquí tu mensaje..."></textarea>
       </div>
 
-      <button type="submit" class="boton">Publicar en el foro</button>
+      <button type="submit" class="boton boton-blanco">Publicar en el foro</button>
     </form>
+    <div class="contenedor-foro">
     <div class="filtro-foro">
       <label for="filtro-categoria">Filtrar por categoría:</label>
       <select id="filtro-categoria" class="select-foro">
@@ -62,17 +63,24 @@
     </div>
 
     <h2>Últimos comentarios</h2>
-    <section class="grilla">
+    <section class="grilla-foro">
       <article class="tarjeta" data-categoria="soporte">
-        <p><strong>Soporte Técnico • 01/12/2025</strong><br>¿Alguien ya jugó la demo de GTA 6? El motor gráfico es impresionante.</p>
+        <p><strong>Soporte Técnico • 01/12/2025</strong><br>¿Alguien ya jugó la demo de GTA 6? El motor gráfico es impresionante, Cada vez se acerca a la realidad.</p>
       </article>
       <article class="tarjeta" data-categoria="opinion">
-        <p><strong>Opinión • 30/11/2025</strong><br>Los juegos de mundo abierto se están volviendo repetitivos. ¡Necesitamos innovación!</p>
+        <p><strong>Opinión • 30/11/2025</strong><br>Los juegos de mundo abierto se están volviendo repetitivos. Solo exploras un mundo vacio y sin vida</p>
       </article>
-      <article class="tarjeta" data-categoria="Off-Topic">
-        <p><strong>Off-Topic • 29/11/2025</strong><br>¡Hola comunidad! ¿Qué juego están jugando esta semana?</p>
+      <article class="tarjeta" data-categoria="offtopic">
+        <p><strong>Off-Topic • 29/11/2025</strong><br>¡Hola comunidad! ¿Qué juego están jugando esta semana? ¿Me recomendarian algun exito de este año?</p>
+      </article>
+      <article class="tarjeta" data-categoria="general">
+        <p><strong>General • 08/12/2025</strong><br>¡Bienvenidos a todos los nuevos miembros de la comunidad! Este foro esta para que hablen de juegos.</p>
+      </article>
+      <article class="tarjeta" data-categoria="lanzamientos">
+        <p><strong>Lanzamientos • 07/12/2025</strong><br>Se lanzó oficialmente Elden Ring: Expansion Pack 2. ¿Quién ya lo está jugando? ¿Donde lo descargo?</p>
       </article>
     </section>
+    </div>
   </main>
 
   <footer>
