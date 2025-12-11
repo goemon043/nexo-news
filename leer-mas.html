@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Julio Mateo Bustillos Serrano">
+    <meta name="keywords" content="univalle,noticias, videojuegos">
+    <link rel="icon" type="image/png" href="imagenes/Pylon.png">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>NexoLeerMas</title>
+</head>
+<body>
+  <header>
+    <a href="index.html" style="text-decoration: none;">
+        <div class="logo">
+        <img src="imagenes/Pylon.png" alt="Logo Nexo News">
+        <span>Nexo News</span>
+        </div>
+        </a>
+    <button class="menu-hamburguesa" aria-label="Menú de navegación">☰</button>
+    <nav id="menu-principal">
+      <ul>
+        <li><a href="index.html">Principal</a></li>
+        <li><a href="top-juegos.html">Top Juegos</a></li>
+        <li><a href="foro.html">Foro</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+        <li><a href="contactos.html">Contactos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="contenido-noticia">
+    <article class="tarjeta tarjeta-ampliada">
+      <button  onclick="history.back()" class="boton-blanco">VOLVER</button>
+      <h1 id="titulo-noticia" class="titulo-tarjeta"></h1>
+      <img id="img-noticia" src="" alt="Imagen de la noticia" onerror="this.src='imagenes/Pylon.png'" />
+      <div id="contenido-completo" class="texto-tarjeta"></div>
+      <a id="enlace-original" href="#" target="_blank" class="boton" style="margin-top: 1.5rem; display: inline-block;">
+        Ir a la fuente original
+      </a>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Nexo News • Todos los derechos reservados</p>
+  </footer>
+
+  <script src="scripts/scripts.js"></script>
+</body>
+</html>
